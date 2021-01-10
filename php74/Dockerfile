@@ -18,6 +18,7 @@ RUN apt-get update \
     && pecl install mcrypt-1.0.3 \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
+RUN sed -i 's/:9000/:9100/' /etc/php/7.4/fpm/pool.d/z-overrides.conf
 
 ADD ./php.ini /etc/php/7.4/fpm/conf.d/90-php.ini
 ADD ./php.ini /etc/php/7.4/cli/conf.d/90-php.ini
@@ -26,4 +27,4 @@ RUN usermod -u 1000 www-data
 
 WORKDIR "/var/www/bitrix"
 
-EXPOSE 9000
+EXPOSE 9100

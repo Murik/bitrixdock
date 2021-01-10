@@ -1,4 +1,10 @@
+# IntellijIdea files
+*.iml
+*.ipr
+*.iws
 .idea
+
 logs
 data
 .env
+db/
