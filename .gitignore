@@ -7,4 +7,5 @@
 logs
 data
 .env
+.env_*
 db/
